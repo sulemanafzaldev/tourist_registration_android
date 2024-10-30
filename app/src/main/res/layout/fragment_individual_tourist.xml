@@ -1,13 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".IndividualTouristFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_6sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_individual_info_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Group information label"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.05"
+            android:text="Individual Information"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_name_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:hint="Name"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_individual_info_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_email_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:hint="Email"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_passportNumber_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:hint="Passport Number"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_email_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_passportNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_visaNumber_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:hint="Visa Number"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_passportNumber_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_visaNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_mobileNumber_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:hint="Mobile Number"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_visaNumber_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_mobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- Select Factory Dropdown -->
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_gender"
+            style="@style/Spinner"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:background="@drawable/bg_spinner_gray_border"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:entries="@id/spinner_gender"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mobileNumber_label" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_country_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:hint="Country(s) i.e. Dubai, USA, Turkey, etc."
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_gender">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_individual_Date_of_arrival_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="Group information label"
+            android:fontFamily="sans-serif-medium"
+            android:text="Date of Arrival and Destinations in KP"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_country_label" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_date_of_arrival_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:hint="Date Of Arrival"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_individual_Date_of_arrival_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_date_arrival"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_destination_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:hint="Destinations i.e Peshawar, Swat, Naran, etc."
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date_of_arrival_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_hotel_addres_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:hint="Hotel Address"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_destination_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_hotel_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:inputType="text"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Description Label -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_description_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.05"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_hotel_addres_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="Enter details here.."
+            android:inputType="textMultiLine"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:minLines="3"
+            android:padding="@dimen/_4sdp"
+            android:gravity="start"
+            android:textAlignment="textStart"
+            android:background="@drawable/bg_edit_text"
+            app:layout_constraintHeight_percent="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_description_label"
+            android:textSize="@dimen/_12ssp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:backgroundTint="#41C847"
+            android:text="Submit"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@android:color/white"
+            app:cornerRadius="@dimen/_4sdp"
+            app:layout_constraintEnd_toStartOf="@id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@id/et_description" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#403F3F"
+            android:text="Cancel"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@android:color/white"
+            app:cornerRadius="@dimen/_6sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_description" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
